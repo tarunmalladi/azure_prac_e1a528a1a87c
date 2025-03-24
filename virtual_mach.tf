@@ -10,7 +10,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
 
   admin_ssh_key {
     username   = "azureuser"
-    public_key = file("C:\\Users\\TARUN\\terraform-fldr\\azure_prac_e1a528a1a87c\\.ssh\\id_rsa.pub")
+    public_key = file("c:/Users/TARUN/terraform-fldr/azure_prac_e1a528a1a87c/.ssh/id_rsa.pub")
   }
 
   os_disk {
@@ -36,7 +36,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
     connection {
       type        = "ssh"
       user        = "azureuser"
-      private_key = file("C:\\Users\\TARUN\\terraform-fldr\\azure_prac_e1a528a1a87c\\.ssh\\id_rsa")
+      private_key = file("c:/Users/TARUN/terraform-fldr/azure_prac_e1a528a1a87c/.ssh/id_rsa.pem")
       host        = azurerm_public_ip.vm_public_ip[count.index].ip_address
     }
   }
