@@ -25,14 +25,6 @@ resource "azurerm_linux_virtual_machine" "vm" {
     version   = "latest"
   }
 
-  provisioner "remote-exec" {
-    inline = [
-      "sudo apt-get update",
-      "sudo apt-get install -y nginx",
-      "sudo systemctl start nginx",
-      "sudo systemctl enable nginx"
-    ]
-
     connection {
       type        = "ssh"
       user        = "azureuser"
@@ -40,4 +32,3 @@ resource "azurerm_linux_virtual_machine" "vm" {
       host        = azurerm_public_ip.vm_public_ip[count.index].ip_address
     }
   }
-}
