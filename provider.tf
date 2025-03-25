@@ -5,7 +5,7 @@ terraform {
       version = "=4.23.0"
     }
   }
-
+  
   backend "azurerm" {
     resource_group_name   = "mybackend-rg"
     storage_account_name  = "mybackendsa"
