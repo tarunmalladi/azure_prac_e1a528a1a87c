@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "rg" {
   name     = "myrg-1"
-  location = "South India"
+  location = "Central India"
 }
 
 resource "azurerm_virtual_network" "vnet" {
